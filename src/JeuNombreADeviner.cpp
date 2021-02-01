@@ -101,8 +101,8 @@ void JouerPartie(TJoueur& un_joueur, int nombreADeviner)
 
 void MajResultatsJoueur(TJoueur joueur, int nbEssais, bool gagne)
 {
-   joueurAcreer.nbTentatives = nbEssais;
-   joueurAcreer.nbPartiesGagnees = gagne;
+   joueurAcreer.nbTentatives = joueurAcreer.nbTentatives + nbEssais;
+   if(gagne==true)
 }
 
 // Nom : ResultatsJoueur
@@ -116,6 +116,7 @@ void MajResultatsJoueur(TJoueur joueur, int nbEssais, bool gagne)
 void ResultatsJoueur(TJoueur joueur, int& nbsucces, int& nbechec, int& nbessais)
 {
     joueurAcreer.nbPartiesGagnees = nbsucces;
+    joueurAcreer.nbPartiesGagnees = nbechec;
 }
 
 // Nom :Nom
