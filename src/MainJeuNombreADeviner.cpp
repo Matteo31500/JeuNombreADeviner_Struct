@@ -16,6 +16,15 @@ using namespace std;
 
 int main()
 {
-    return 0;
+    TJoueur un_joueur;
+    cout << "Quel est votre nom ?" << endl;
+    cin >> un_joueur.nom;
+    JouerPartie(un_joueur, TirerNombreMystere());
+    cout << "-------------------------" << endl;
+    cout << "Nom : " << un_joueur.nom << endl;
+    cout << "Nombre de parties gagnées : " << un_joueur.nbPartiesGagnees << endl;
+    cout << "Nombre de parties jouées : " << un_joueur.nbPartiesJouees << endl;
+    cout << "Nombre de tentatives : " << un_joueur.nbTentatives << endl;
+
 }
 

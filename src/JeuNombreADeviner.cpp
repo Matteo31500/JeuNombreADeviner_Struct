@@ -45,10 +45,24 @@ void InitJoueur(TJoueur& joueurAcreer, string un_nom)
 int TirerNombreMystere()
 {
         srand((unsigned int) time(0));
-        int nombre=(rand()%10) + 0;
-        return nombre;
+        int nombreADeviner=(rand()%10) + 0;
+        return nombreADeviner;
 }
 
+// Nom : MajResultatsJoueur
+// Rôle : met à jour les informations du joueur passé en paramètre
+// Paramètres d'entrée:
+// Paramètres de sortie:
+// Paramètres d'entrée/sortie :
+
+void MajResultatsJoueur(TJoueur joueur, int nbEssais, bool gagne)
+{
+    joueur.nbTentatives = joueur.nbTentatives + nbEssais;
+    if (gagne == true) {
+        joueur.nbPartiesGagnees++;
+    }
+    joueur.nbPartiesJouees++;
+}
 
 // Nom :JouerPartie
 // Rôle : Fait jouer une partie au joueur passé en paramètre
@@ -60,12 +74,12 @@ int TirerNombreMystere()
 void JouerPartie(TJoueur& un_joueur, int nombreADeviner)
 {
         int i = 0;
-        int v = 0;
-        int d = 0;
         int valeur = 0;
+        bool win = true;
+        bool loose = false;
 
         cout << "Trouve le nombre mystère" << endl;
-        while(valeur !== nombreADeviner || i!==4) {
+        while(valeur != nombreADeviner && i!= 4) {
             cout << "Valeur : ";
             cin >> valeur;
             i++;
@@ -76,33 +90,15 @@ void JouerPartie(TJoueur& un_joueur, int nombreADeviner)
                 cout << "C'est moins !" << endl;
             }
             if(valeur == nombreADeviner) {
+                MajResultatsJoueur((TJoueur)un_joueur, i, win);
                 cout << "Vous avez trouvé le juste prix !" << endl;
-                cout << "Nombre d'essais : " << essai << endl;
-                MajResultatsJoueur(un_joueur, essai, true);
-                cout << "Nombre de victoire : " << joueurAcreer.nbPartiesGagnees;
-                cout << "Nombre de défaite : " << nbechec;
+                cout << "Nombre d'essais : " << i << endl;
             }
             if(i == 4) {
+                MajResultatsJoueur((TJoueur)un_joueur, i, loose);
                 cout << "Vous n'avez pas réussi à trouvé le juste prix..." << endl;
-                cout << "Nombre d'essais : " << essai << endl;
-                MajResultatsJoueur(un_joueur, essai);
-                cout << "Nombre de victoire : " << joueurAcreer.nbPartiesGagnees;
-                cout << "Nombre de défaite : " << nbechec;
             }
         }
-}
-
-
-// Nom : MajResultatsJoueur
-// Rôle : met à jour les informations du joueur passé en paramètre
-// Paramètres d'entrée:
-// Paramètres de sortie:
-// Paramètres d'entrée/sortie :
-
-void MajResultatsJoueur(TJoueur joueur, int nbEssais, bool gagne)
-{
-   joueurAcreer.nbTentatives = joueurAcreer.nbTentatives + nbEssais;
-   if(gagne==true)
 }
 
 // Nom : ResultatsJoueur
@@ -115,8 +111,9 @@ void MajResultatsJoueur(TJoueur joueur, int nbEssais, bool gagne)
 
 void ResultatsJoueur(TJoueur joueur, int& nbsucces, int& nbechec, int& nbessais)
 {
-    joueurAcreer.nbPartiesGagnees = nbsucces;
-    joueurAcreer.nbPartiesGagnees = nbechec;
+    nbsucces = joueur.nbPartiesGagnees;
+    nbechec = joueur.nbPartiesJouees - joueur.nbPartiesGagnees;
+    nbessais = joueur.nbTentatives;
 }
 
 // Nom :Nom

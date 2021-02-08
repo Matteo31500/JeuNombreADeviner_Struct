@@ -28,3 +28,15 @@
 1611593187 z:\gitprojets\jeunombreadeviner_struct\include\jeunombreadeviner.h
 	<string>
 
+1612713412 source:e:\documents\École\limayrac\git projets\jeunombreadeviner_struct\src\mainjeunombreadeviner.cpp
+	<iostream>
+	"../include/JeuNombreADeviner.h"
+
+1612705214 e:\documents\École\limayrac\git projets\jeunombreadeviner_struct\include\jeunombreadeviner.h
+	<string>
+
+1612712762 source:e:\documents\École\limayrac\git projets\jeunombreadeviner_struct\src\jeunombreadeviner.cpp
+	<iostream>
+	"../include/JeuNombreAdeviner.h"
+	<ctime>
+
