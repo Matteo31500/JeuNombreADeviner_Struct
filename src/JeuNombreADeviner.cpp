@@ -2,7 +2,7 @@
 // Nom du projet: Jeu du nombre à deviner
 // Nom du fichier: JeuNombreADeviner.cpp
 // Version : 1.0
-// Nom du programmeur: MP Pinaud
+// Nom du programmeur: MP Pinaud, Mattéo Arzel
 // Date de création : 25/01/2021
 // Rôle du fichier: Contient le code des fonctions du jeu
 // Nom des composants utilises: JeuNombreADeviner.h
@@ -10,9 +10,13 @@
 //                              ctime
 // Historique du fichier:
 //
-// 25/01/2021 : - Ajout de la librairie <ctime>
-//              - Fonction InitJoueur completée
-//              - Fonction TirerNombreMystere completée
+// 25/01/2021 : - Ajout de la librairie <ctime> (Mattéo Arzel)
+//              - Fonction InitJoueur completée (Mattéo Arzel)
+//              - Fonction TirerNombreMystere completée (Mattéo Arzel)
+//
+// 07/02/2021 : - Fonction JouerPartie completée (Mattéo Arzel)
+//              - Fonction MajResultatsJoueur completée (Mattéo Arzel)
+//              - Fonction ResultatsJoueur completée (Mattéo Arzel)
 //
 //
 /*************************************************/
@@ -55,7 +59,7 @@ int TirerNombreMystere()
 // Paramètres de sortie:
 // Paramètres d'entrée/sortie :
 
-void MajResultatsJoueur(TJoueur joueur, int nbEssais, bool gagne)
+void MajResultatsJoueur(TJoueur& joueur, int nbEssais, bool gagne)
 {
     joueur.nbTentatives = joueur.nbTentatives + nbEssais;
     if (gagne == true) {
@@ -78,7 +82,7 @@ void JouerPartie(TJoueur& un_joueur, int nombreADeviner)
         bool win = true;
         bool loose = false;
 
-        cout << "Trouve le nombre mystère" << endl;
+        cout << "Trouve le nombre mystere !" << endl;
         while(valeur != nombreADeviner && i!= 4) {
             cout << "Valeur : ";
             cin >> valeur;
@@ -86,18 +90,20 @@ void JouerPartie(TJoueur& un_joueur, int nombreADeviner)
             if(valeur < nombreADeviner) {
                 cout << "C'est plus !" << endl;
             }
-            if(valeur > nombreADeviner) {
+            else if(valeur > nombreADeviner) {
                 cout << "C'est moins !" << endl;
             }
-            if(valeur == nombreADeviner) {
-                MajResultatsJoueur((TJoueur)un_joueur, i, win);
-                cout << "Vous avez trouvé le juste prix !" << endl;
+            else if(valeur == nombreADeviner) {
+                MajResultatsJoueur(un_joueur, i, win);
+                cout << endl << "Vous avez trouver le juste prix !" << endl;
                 cout << "Nombre d'essais : " << i << endl;
             }
-            if(i == 4) {
-                MajResultatsJoueur((TJoueur)un_joueur, i, loose);
-                cout << "Vous n'avez pas réussi à trouvé le juste prix..." << endl;
-            }
+        }
+
+        if(i == 4 && valeur != nombreADeviner) {
+                MajResultatsJoueur(un_joueur, 4, loose);
+                cout << endl << "Vous n'avez pas reussi a trouve le juste prix..." << endl;
+                cout << "Le nombre mystere a trouver etait : " << nombreADeviner << endl;
         }
 }
 
