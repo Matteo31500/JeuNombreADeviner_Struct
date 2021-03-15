@@ -19,17 +19,20 @@ using namespace std;
     //                  un_nom : le nom du joueur
     // Sortie : le joueur créé
 
-    CJoueur::CJoueur(string un_nom)
+    CJoueur::CJoueur(string un_nom, string un_prenom)
     {
         this->nom=un_nom;
+        this->prenom = un_prenom;
         this->nbPartiesGagnees=0;
         this->nbPartiesJouees= 0;
         this->nbTentatives=0;
 
     }
 
-
-
+    CJoueur::~CJoueur()
+    {
+        cout << this->nom << " possède l'adresse " << this << " va etre detruit " << endl;
+    }
 
     // Nom : MajResultats
     // Rôle : met à jour les informations d'un joueur
@@ -79,5 +82,11 @@ using namespace std;
     {
 
         return this->nom;
+    }
+
+    string CJoueur::Prenom()
+    {
+
+        return this->prenom;
     }
 

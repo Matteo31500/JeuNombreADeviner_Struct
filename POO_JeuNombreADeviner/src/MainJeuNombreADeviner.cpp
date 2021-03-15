@@ -24,12 +24,17 @@ int main()
     cout << "Veuillez entrer le nom du joueur 1 : ";
     string un_nom;
     cin >> un_nom;
-    CJoueur joueur (un_nom);
+    cout << "Veuillez entrer le prenom du joueur 1 : ";
+    string un_prenom;
+    cin >> un_prenom;
+    CJoueur joueur (un_nom, un_prenom);
     //Création du joueur 2
     cout << "----------------------------------------------"<< endl;
     cout << "Veuillez entrer le nom du joueur 2 : ";
     cin >> un_nom;
-    CJoueur joueur2 (un_nom);
+    cout << "Veuillez entrer le prenom du joueur 2 : ";
+    cin >> un_prenom;
+    CJoueur joueur2 (un_nom, un_prenom);
 
     cout << "----------------------------------------------"<< endl;
     cout << "Combien de parties voulez-vous jouer ?" << endl;
@@ -90,19 +95,19 @@ int main()
     cout << "----------------------------------------------"<< endl;
 
     if(joueurw == joueur2w) {
-        cout << joueur.Nom() << " et " << joueur2.Nom() << " sont ex-aequo !" << endl;
+        cout << joueur.Nom() << " " << joueur.Prenom() << " et " << joueur2.Nom() << " " << joueur2.Prenom() << " sont ex-aequo !" << endl;
     }
 
     if(joueurw > joueur2w) {
-        cout << joueur.Nom() << " a gagne !" << endl;
+        cout << joueur.Nom() << " " << joueur.Prenom() << " a gagne !" << endl;
     }
     else{
-        cout << joueur2.Nom() << " a gagne !" << endl;
+        cout << joueur2.Nom() << " " << joueur2.Prenom() << " a gagne !" << endl;
     }
 
     // Créer un 3ème joueur dynamiquement
     CJoueur * joueur3;
-    joueur3=new CJoueur("Paul");
+    joueur3=new CJoueur("Paul", "Dumont");
 
     // Créer une partie dynamiquement (nombre à trouver entre 1 et
     // 10, 3 essais max)

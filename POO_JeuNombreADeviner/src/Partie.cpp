@@ -56,7 +56,7 @@ using namespace std;
         bool gagne = false;
 
         cout << "-------------"<< endl;
-        cout << un_joueur.Nom() << " joue" <<endl;
+        cout << un_joueur.Prenom() << " " <<un_joueur.Nom() << " joue" <<endl;
         cout << "-------------"<< endl;
 
         while (i < 4 && gagne == false)

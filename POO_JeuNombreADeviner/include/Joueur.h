@@ -23,7 +23,9 @@ class CJoueur {
     // Paramètre d'entrée : un_nom le nom du joueur
     // Sortie : le joueur créé
 
-    CJoueur(string un_nom);
+    CJoueur(string un_nom, string un_prenom);
+
+    ~CJoueur();
 
     // Nom : MajResultats
     // Rôle : met à jour les informations d'un joueur
@@ -56,6 +58,7 @@ class CJoueur {
     // Entrée : le joueur dont on veut le nom
 
     string Nom();
+    string Prenom();
 
     void ResultatsMoy(float &moy) {
         moy = (float) nbTentatives / nbPartiesJouees;
@@ -64,6 +67,7 @@ class CJoueur {
     private :
 
         string nom;  // nom du joueur
+        string prenom;
         int nbPartiesJouees;
         int nbPartiesGagnees;
         int nbTentatives;
