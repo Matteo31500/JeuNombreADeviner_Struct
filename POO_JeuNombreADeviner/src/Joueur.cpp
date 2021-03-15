@@ -6,7 +6,7 @@
 // Date de création : 05/02/2021
 // Rôle du fichier: Contient le code des méthodes du joueur
 // Nom des composants utilises:
-// Historique du fichier:
+// Historique du fichier : M Arzel => 15/03/2021 : Modifications de CJoueur pour l'ajout de prénom
 /*************************************************/
 #include <iostream>
 using namespace std;

@@ -8,7 +8,8 @@
 // Nom des composants utilises: CJoueur
 //                              iostream
 //                              ctime
-// Historique du fichier:
+// Historique du fichier :  M Arzel => 14/03/2021 : Modifications du main pour récuperer la moyenne des tentatives
+//                                     15/03/2021 : Modifications du main pour demander à l'utilisateur de saisir un prenom
 /*************************************************/
 
 #include <cstdlib>

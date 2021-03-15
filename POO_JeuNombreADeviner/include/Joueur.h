@@ -6,7 +6,7 @@
 // Date de création : 05/02/2021
 // Rôle du fichier: Contient la déclaration des attributs et méthodes de la classe qui représente un joueur
 // Nom des composants utilises: string
-// Historique du fichier:
+// Historique du fichier : M Arzel => 14/03/2021 : Création de ResultatsMoy
 /*************************************************/
 #include <string>
 using namespace std;
