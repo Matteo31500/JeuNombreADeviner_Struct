@@ -105,3 +105,24 @@
 	<iostream>
 	"../include/Partie.h"
 
+1615804615 source:c:\users\am500453\downloads\jeunombreadeviner_struct-dev\poo_jeunombreadeviner\src\joueur.cpp
+	<iostream>
+	"../include/Joueur.h"
+
+1615803941 c:\users\am500453\downloads\jeunombreadeviner_struct-dev\poo_jeunombreadeviner\include\joueur.h
+	<string>
+
+1615734992 source:c:\users\am500453\downloads\jeunombreadeviner_struct-dev\poo_jeunombreadeviner\src\mainjeunombreadeviner.cpp
+	<iostream>
+	"../include/Partie.h"
+
+1615734992 c:\users\am500453\downloads\jeunombreadeviner_struct-dev\poo_jeunombreadeviner\include\partie.h
+	<string>
+	"../include/Joueur.h"
+
+1615734992 source:c:\users\am500453\downloads\jeunombreadeviner_struct-dev\poo_jeunombreadeviner\src\partie.cpp
+	<cstdlib>
+	<ctime>
+	<iostream>
+	"../include/Partie.h"
+

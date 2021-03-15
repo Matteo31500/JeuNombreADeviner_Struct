@@ -58,7 +58,7 @@ class CJoueur {
     string Nom();
 
     void ResultatsMoy(float &moy) {
-        moy = nbTentatives / nbPartiesJouees;
+        moy = (float) nbTentatives / nbPartiesJouees;
     }
 
     private :

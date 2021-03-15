@@ -21,6 +21,7 @@ using namespace std;
 
     CJoueur::CJoueur(string un_nom)
     {
+        this->nom=un_nom;
         this->nbPartiesGagnees=0;
         this->nbPartiesJouees= 0;
         this->nbTentatives=0;
