@@ -31,7 +31,7 @@ using namespace std;
 
     CJoueur::~CJoueur()
     {
-        cout << this->nom << " possède l'adresse " << this << " va etre detruit " << endl;
+        cout <<"L'adresse : "<< this << " de "<< this->prenom  <<" "<< this->nom << " va etre detruite" << endl;
     }
 
     // Nom : MajResultats
